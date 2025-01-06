@@ -58,9 +58,9 @@ function Scene() {
 | duration  | number   | 1.2     | Animation duration in seconds      |
 | onFadeOut | function | -       | Callback when fade out completes   |
 
-## 🌐 Demo
+## 🌐 Demo & 📚 Documentation
 
-Check out the [live demo](https://dissolveit-demo.vercel.app) to see the effect in action and experiment with different configurations.
+Check out the [live demo](https://dissolve-demo.vercel.app) to see the effect in action and experiment with different configurations.
 
 ## 🛠️ Development
 
@@ -77,10 +77,6 @@ npm run dev
 # Build for production
 npm run build
 ```
-
-## 📚 Documentation
-
-For detailed documentation and examples, visit our [documentation site](https://dissolveit-docs.netlify.app).
 
 ## 🤝 Contributing
 

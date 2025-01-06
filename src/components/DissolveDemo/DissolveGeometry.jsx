@@ -1,3 +1,4 @@
+// components/DissolveGeometry.jsx
 import { DissolveEffect } from "dissolveit";
 import { GeometryComponent } from "./GeometryComponent";
 

@@ -1,11 +1,12 @@
+// hooks/useGeometryStates.js
 import { useState, useCallback } from "react";
 
-export function useGeometryStates(geometries) {
+export function useGeometryStates(geometries, initialGeometry = "box") {
   const [geometryStates, setGeometryStates] = useState(
     Object.fromEntries(
       geometries.map((geo) => [
         geo,
-        { visible: geo === "box", isFading: false },
+        { visible: geo === initialGeometry, isFading: false },
       ])
     )
   );
@@ -20,18 +21,21 @@ export function useGeometryStates(geometries) {
     }));
   }, []);
 
-  const updateGeometryStates = useCallback((selectedGeometry) => {
-    setGeometryStates((prev) => {
-      const newStates = { ...prev };
-      Object.keys(newStates).forEach((geo) => {
-        if (geo !== selectedGeometry && newStates[geo].visible) {
-          newStates[geo].isFading = true;
-        }
-      });
-      newStates[selectedGeometry] = { visible: true, isFading: false };
-      return newStates;
-    });
+  const startTransition = useCallback((oldGeometry, newGeometry) => {
+    // First, trigger fade out of current geometry
+    setGeometryStates((prev) => ({
+      ...prev,
+      [oldGeometry]: { ...prev[oldGeometry], isFading: true },
+    }));
+
+    // After a delay, show and fade in the new geometry
+    setTimeout(() => {
+      setGeometryStates((prev) => ({
+        ...prev,
+        [newGeometry]: { visible: true, isFading: false },
+      }));
+    }, 1000); // Adjust this delay as needed
   }, []);
 
-  return { geometryStates, handleFadeComplete, updateGeometryStates };
+  return { geometryStates, handleFadeComplete, startTransition };
 }

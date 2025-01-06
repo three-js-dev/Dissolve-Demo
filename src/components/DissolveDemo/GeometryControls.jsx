@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+// components/GeometryControls.jsx
+import { useState, useEffect, useRef } from "react";
 import { useControls, button } from "leva";
 import { DissolveGeometry } from "./DissolveGeometry";
 import { geometries, scaleMap } from "./geometryConfig";
@@ -8,19 +9,23 @@ import { useGeometryStates } from "./hooks/useGeometryStates";
 export function GeometryControls() {
   const [animationKey, setAnimationKey] = useState(0);
   const { itemDisplayed, effectValues } = useDissolveControls();
-  const { geometryStates, handleFadeComplete, updateGeometryStates } =
+  const previousGeometry = useRef(itemDisplayed);
+  const { geometryStates, handleFadeComplete, startTransition } =
     useGeometryStates(geometries);
+
+  useEffect(() => {
+    if (previousGeometry.current !== itemDisplayed) {
+      startTransition(previousGeometry.current, itemDisplayed);
+      previousGeometry.current = itemDisplayed;
+      setAnimationKey((prev) => prev + 1);
+    }
+  }, [itemDisplayed, startTransition]);
 
   useControls({
     "Play Animation": button(() => {
       setAnimationKey((prev) => prev + 1);
     }),
   });
-
-  useEffect(() => {
-    const TRANSITION_DELAY = 500;
-    updateGeometryStates(itemDisplayed);
-  }, [itemDisplayed, updateGeometryStates]);
 
   return (
     <>
@@ -31,7 +36,7 @@ export function GeometryControls() {
               key={`${geometry}-${animationKey}`}
               geometry={geometry}
               scale={scaleMap[geometry]}
-              isSelected={itemDisplayed === geometry}
+              isSelected={!geometryStates[geometry].isFading}
               effectValues={effectValues}
               onFadeOut={() => handleFadeComplete(geometry)}
             />

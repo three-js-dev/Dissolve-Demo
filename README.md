@@ -60,7 +60,7 @@ function Scene() {
 
 ## 🌐 Demo
 
-Check out the [live demo](https://dissolveit-demo.netlify.app) to see the effect in action and experiment with different configurations.
+Check out the [live demo](https://dissolveit-demo.vercel.app) to see the effect in action and experiment with different configurations.
 
 ## 🛠️ Development
 

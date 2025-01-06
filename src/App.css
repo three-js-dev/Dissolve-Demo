@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  background: #13151a;
+}
+
+.documentation-container {
+  padding: 2rem;
+  overflow-y: hidden;
+}
+
+.demo-container {
+  position: relative;
+  height: 100vh;
+}
+
+@media (max-width: 1024px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-container {
+    height: 50vh;
+  }
+}
+
+.properties-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.properties-table th,
+.properties-table td {
+  padding: 0.75rem;
+  border: 1px solid #2a2a2a;
+  text-align: left;
+}
+
+.properties-table th {
+  background: #1a1a1a;
+  color: #e98529;
+}
+
+.properties-table tr:nth-child(even) {
+  background: #1a1a1a;
+}

@@ -1,0 +1,133 @@
+/* Base styles */
+.documentation {
+  color: #ffffff;
+  padding: 2rem;
+  height: 92vh;
+  overflow-y: auto;
+  background: #13151a;
+  scrollbar-width: thin;
+  scrollbar-color: #e98529 #1a1a1a;
+}
+
+/* Scrollbar Styles */
+.documentation::-webkit-scrollbar {
+  width: 12px;
+}
+
+.documentation::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 6px;
+}
+
+.documentation::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #4f44f5, #e98529);
+  border-radius: 6px;
+  border: 3px solid #1a1a1a;
+}
+
+.documentation::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #e98529, #4f44f5);
+}
+
+/* Header Styles */
+.documentation-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #2a2a2a;
+}
+
+.documentation-header h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #4f44f5, #e98529);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Package Links */
+.package-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-link {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.social-link.github {
+  background: #24292e;
+  color: white;
+}
+
+.social-link.twitter {
+  background: #1da1f2;
+  color: white;
+}
+
+.social-link:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Content Sections */
+.usage-section,
+.installation-section,
+.properties-section {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  color: #ffffff;
+}
+
+h2 {
+  color: #e98529;
+  margin-bottom: 1.5rem;
+}
+
+/* Code Blocks */
+pre {
+  background: #242424;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+code {
+  color: #ffffff;
+  font-family: "Fira Code", monospace;
+}
+
+/* Footer */
+.documentation-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 2px solid #2a2a2a;
+  text-align: center;
+  color: #ffffff;
+}
+
+.documentation-footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.documentation-footer .creator {
+  color: #e98529;
+  font-weight: bold;
+}
+
+.documentation-footer .license {
+  color: #4f44f5;
+}

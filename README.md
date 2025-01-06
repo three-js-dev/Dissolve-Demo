@@ -98,7 +98,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Credits
 
-Created and maintained by [kadf](https://github.com/yourusername).
+Created and maintained by [Rohan](https://github.com/three-js-dev).
 
 ## 🌟 Show your support
 

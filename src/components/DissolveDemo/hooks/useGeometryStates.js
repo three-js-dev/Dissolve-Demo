@@ -34,7 +34,7 @@ export function useGeometryStates(geometries, initialGeometry = "box") {
         ...prev,
         [newGeometry]: { visible: true, isFading: false },
       }));
-    }, 1000); // Adjust this delay as needed
+    }, 10); // Adjust this delay as needed
   }, []);
 
   return { geometryStates, handleFadeComplete, startTransition };

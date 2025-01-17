@@ -2,7 +2,7 @@
 
 ![NPM Version](https://img.shields.io/npm/v/dissolveit.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Downloads](https://img.shields.io/npm/dt/dissolveit.svg)
+
 
 A stunning dissolve effect component for React Three Fiber applications. Create seamless transitions between 3D objects with customizable colors, intensity, and timing.
 
